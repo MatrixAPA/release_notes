@@ -1,0 +1,24 @@
+<div class="release-note-type release-note-item-form-container nested-fields">
+  <%= f.hidden_field :release_note_id, value: f.object.release_note.id %>
+  <%= f.hidden_field :user_id, value: current_user.id %>
+
+  <div class="release-note-item-form-change-type">
+    <%= f.input :change_type_id, label: 'Change Type', collection: ReleaseNotes::ChangeType.all, allow_blank: false, html: {class: 'form-control input-sm'} %>
+  </div>
+
+  <div class="release-note-item-form-change-title">
+    <%= f.input :change_title, label: 'Change Title', html: {class: 'form-control input-sm'} %>
+  </div>
+
+
+  <div class="release-note-item-form-change-details">
+    <%= f.input :change_details, label: 'Change Details (HTML safe)', html: {class: 'form-control input-sm'} %>
+  </div>
+
+  <div class="release-note-item-add-button">
+    <%= link_to_remove_association f do %>
+      <i class="fa fa-trash delete"></i>
+    <% end %>
+  </div>
+
+</div>

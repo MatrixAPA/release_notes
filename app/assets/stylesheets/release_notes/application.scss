@@ -1,0 +1,75 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+// Custom bootstrap variables must be set or imported *before* bootstrap.
+@import "bootstrap";
+
+
+
+.nav-dropdown {
+  button {
+    border: none;
+  }
+}
+
+.nav-dropdown-menu-item {
+  padding: 4px 0 4px 8px;
+  color: black;
+
+  a, a:link, a:visited {
+    color: black;
+    text-decoration: none;
+  }
+
+  a:active, a:hover {
+    color: rgba(0,0,0,0.8);
+    text-decoration: none;
+  }
+
+  &:hover {
+    background-color: rgba(0,0,0,0.05);
+  }
+}
+
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+.navbar-label-toggle {
+  position: relative;
+  background-color: transparent;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  color: grey;
+
+  // We remove the `outline` here, but later compensate by attaching `:hover`
+  // styles to `:focus`.
+  &:focus {
+    outline: 0;
+  }
+
+  &:hover {
+    color: #DADADA;
+  }
+
+  @media (min-width: 50px) {
+    display: none;
+  }
+
+}

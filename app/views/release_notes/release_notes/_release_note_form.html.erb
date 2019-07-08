@@ -1,0 +1,37 @@
+<div class="release-note-container">
+
+  <%= simple_form_for(@release_note, html: {class: 'form'}) do |f| %>
+
+    <%= f.hidden_field :user_id, value: current_user.id %>
+
+    <div class="release-note-row">
+      <div class="release-note-title">
+        <%= f.input :title, html: {class: 'form-control input-sm wide-string-input'} %>
+      </div>
+    </div>
+
+    <div class="release-note-row">
+      <div class="release-note-date">
+        <%= f.input :release_date, as: :date, html5: true, html: {class: 'form-control input-sm'} %>
+      </div>
+    </div>
+
+    <%= f.input :intro, label: 'Intro (HTML safe)' %><br/>
+
+    Release Note Items:
+    <div class="release-note-items-form">
+      <%= f.simple_fields_for :release_note_items do |rni| %>
+        <%= render 'release_notes/release_notes/release_note_item_form', f: rni %>
+      <% end %>
+      <div>
+        <%= link_to_add_association f, :release_note_items, partial: 'release_notes/release_notes/release_note_item_form' do %>
+          <i class="fa fa-plus-square add"></i>
+        <% end %>
+      </div>
+
+    </div>
+    <%= f.input :outro, label: 'Outro (HTML safe)' %><br/>
+    <%= f.button :submit, class: 'btn btn-sm btn-primary' %>
+  <% end %>
+
+</div>

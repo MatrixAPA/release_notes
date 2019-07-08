@@ -1,0 +1,89 @@
+<div class="anchor" id="<%= t('date.month_names')[release_note.release_date.month] + '-' + release_note.release_date.year.to_s %>"></div>
+<div class="release-note-container">
+
+  <div class="release-note-row">
+    <div class="release-note-title">
+      <%= release_note.title %>
+    </div>
+  </div>
+  <div class="release-note-row">
+    <div class="release-note-date">
+      <%= release_note.release_date.strftime("#{release_note.release_date.day.ordinalize} %B %Y") %>
+    </div>
+  </div>
+
+  <div class="release-note-row">
+    <div class="release-note-intro">
+      <%= release_note.intro.html_safe %>
+    </div>
+  </div>
+
+  <div class="release-note-items">
+
+    <% release_note.release_note_items.joins(:change_type).order("priority").map(&:change_type_id).uniq.each do |type| %>
+
+      <% release_note_items = release_note.release_note_items.where("change_type_id = ?", type) %>
+      <% change_type_name = release_note_items.first.change_type.name %>
+      <% auto_show = shown_type == 'all' || shown_type == change_type_name %>
+
+      <button class="release-note-type collapsible">
+        <span class="fa-stack">
+          <i class="fa <%= release_note_items.first.change_type.icon %> fa-stack-2x"></i>
+        </span>
+        <%= change_type_name.pluralize(release_note_items.count) %>
+        <span class="indicator pull-right"><%= auto_show ? '-' : '+' %></span>
+      </button>
+
+      <div class="content" style="<%= auto_show ? 'display:block' : 'display:none' %>">
+        <% release_note_items.each do |item| %>
+
+          <div class="release-note-item-row">
+            <div class="release-note-item-icon">
+              <i class="fa <%= item.change_type.icon %>"></i>
+            </div>
+            <div class="release-note-item-col">
+              <div class="release-note-item-title">
+                <%= item.change_title %>
+              </div>
+              <div class="release-note-item-details">
+                <%= item.change_details.html_safe %>
+              </div>
+            </div>
+          </div>
+
+        <% end %>
+      </div>
+
+    <% end %>
+
+  </div>
+
+  <div class="release-note-row">
+    <div class="release-note-outro">
+      <%= release_note.outro.html_safe %>
+    </div>
+  </div>
+
+  <div class="release-note-row">
+    <div class="release-note-signed-by">
+      <hr/>
+      <%= release_note.user.full_name %>
+    </div>
+  </div>
+
+  <% if user_signed_in? && dev_user %>
+    <div class="release-note-row">
+      <div class="release-note-buttons">
+        <% if release_note.published %>
+          <%= link_to 'Notify', notify_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-success' %>
+          <%= link_to 'Unpublish', publish_toggle_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-danger' %>
+        <% else %>
+          <%= link_to 'Edit', edit_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-info' %>
+          <%= link_to 'Publish', publish_toggle_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-success' %>
+          <%= link_to 'Delete', release_note_path(release_note), :method => :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+        <% end %>
+      </div>
+    </div>
+  <% end %>
+
+</div>

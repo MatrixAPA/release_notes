@@ -1,0 +1,17 @@
+<!-- Left Menu -->
+<div class="index-menu">
+
+  <ul class="nav nav-list">
+
+    <li class="nav-header index-menu-year">
+      <ul class="nav nav-list flex-column index-menu-month" id="show_all">
+        <li class="nav-item">
+          <%= link_to 'Show All', release_notes_path %>
+        </li>
+      </ul>
+    </li>
+
+  </ul>
+</div>
+
+<%= render partial: 'release_notes/release_notes/release_note', locals: {release_note: @release_note, shown_type: 'all'} %>

@@ -1,0 +1,38 @@
+<div class="index-container">
+
+  <!-- Left Menu -->
+  <%= render 'release_notes/release_notes/left_menu' %>
+
+  <!-- Articles -->
+  <div class="index-articles">
+    <% if user_signed_in? && dev_user %>
+      <% if @release_notes.count > 0 %>
+        <% @release_notes.order(release_date: :desc, id: :desc).uniq.each do |note| %>
+
+          <%= render partial: 'release_notes/release_notes/release_note', locals: {release_note: note, shown_type: 'Bug Fix'} %>
+
+        <% end %>
+      <% else %>
+
+        <%= render 'release_notes/release_notes/no_release_notes' %>
+
+      <% end %>
+
+    <% else %>
+
+      <% if @release_notes.published.count > 0 %>
+        <% @release_notes.published.order(release_date: :desc, id: :desc).uniq.each do |note| %>
+
+          <%= render partial: 'release_notes/release_notes/release_note', locals: {release_note: note, shown_type: 'Bug Fix'} %>
+
+        <% end %>
+      <% else %>
+
+        <%= render 'release_notes/release_notes/no_release_notes' %>
+
+      <% end %>
+
+    <% end %>
+  </div>
+
+</div>

@@ -1,0 +1,322 @@
+@import "bootstrap";
+
+.release-note-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 24px 240px 24px 240px;
+  padding: 24px;
+  background-color: rgba(0, 0, 0, 0.03);//#eaf1f8;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.release-note-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.release-note-title {
+  font-size: larger;
+  text-align: center;
+  font-weight: bold;
+  width: 100%;
+}
+
+.release-note-date {
+  font-size: smaller;
+  text-align: center;
+  font-weight: lighter;
+  margin-bottom: 24px;
+}
+
+.release-note-intro {
+  font-size: small;
+  width: 100%;
+  text-align: start;
+  margin-left: 24px;
+  margin-bottom: 12px;
+}
+
+.release-note-outro {
+  font-size: small;
+  width: 100%;
+  text-align: start;
+  margin-left: 24px;
+  margin-top: 12px;
+}
+
+.release-note-signed-by {
+  font-size: x-small;
+  font-weight: lighter;
+  font-style: italic;
+  width: 100%;
+  text-align: end;
+  margin-left: 24px;
+  margin-top: 12px;
+}
+
+.release-note-items {
+  margin: 0 36px 0 36px;
+}
+
+.release-note-type {
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.06); //#cbd3da;
+  padding: 4px;
+  margin: 0 0 8px 12px;
+  font-size: small;
+  font-weight: bold;
+  text-align: start;
+  width: 100%;
+}
+
+.release-note-item-icon {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.release-note-item-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  margin: 24px;
+}
+
+.release-note-item-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.release-note-item-title {
+  font-size: small;
+  font-weight: bold;
+  text-align: start;
+  width: 100%;
+}
+
+.release-note-item-details {
+  font-size: small;
+  text-align: start;
+  width: 100%;
+}
+
+.index-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.index-menu {
+  position: fixed;
+  margin:24px 0 24px 0px;
+  width: 240px;
+  display:flex;
+  flex-direction: column;
+  font-size: smaller;
+}
+
+.index-menu-year {
+  font-weight: bold;
+}
+
+.index-menu-month {
+  font-size: small;
+  font-weight: lighter;
+  margin: 0 0 0 24px;
+}
+
+.index-articles {
+  display:flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.wide-string-input {
+  width: 100%;
+}
+
+.release-note-item-form-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  margin: 0 0 12px 0;
+}
+
+.release-note-item-form-change-type {
+  display: flex;
+  flex: 3;
+}
+
+.release-note-item-form-change-title {
+  display: flex;
+  flex-direction: column;
+  flex: 6;
+  margin: 0 8px 0 8px;
+}
+
+.release-note-item-form-change-details {
+  display: flex;
+  flex-direction: column;
+  flex: 9;
+  margin: 0 8px 0 0;
+}
+
+.release-note-item-add-button {
+  display: flex;
+  flex: 1;
+  padding: 24px 0 24px 0;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  background: #1c1c1c;
+  color: white;
+  a, a:link, a:visited, a:hover, a:active {
+    color: white;
+    text-decoration: none;
+  }
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4);
+  margin-top: -500px;
+  padding: 500px 240px 0 240px;
+}
+
+.nav-h {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.nav-right-panel-col {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  align-content: end;
+}
+
+.nav-right-panel-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+  align-content: end;
+  padding-left: 12px;
+  text-align: end;
+}
+
+.release-note-items-form {
+  padding: 8px;
+  border-radius: 4px;
+  border: solid 1px #DADADA;
+  background: white;
+}
+
+.anchor {
+  display: block;
+  position: relative;
+  top: -72px;
+  visibility: hidden;
+}
+
+.release-note-buttons {
+  margin: 8px 0 0 0;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  width: 10%;
+}
+
+.btn {
+  margin: 0 4px 0 4px;
+}
+
+.notice {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  color: white;
+  z-index: 100;
+  background: #1c1c1c;
+  width: 100%;
+}
+
+.delete {
+  color: darkred;
+}
+
+.add {
+  color: green;
+}
+
+.nav-bar-item {
+  margin-left: 24px;
+}
+
+.search-results-container {
+  display: flex;
+  flex-direction: column;
+  font-size: smaller;
+  font-weight: lighter;
+  margin: 0 0 24px 240px;
+}
+
+.search-results-item {
+  display: flex;
+  flex-direction: row;
+}
+
+.nav-bar-col {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.nav-bar-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  color: white;
+  text-align: center;
+  height: 24px;
+}
+
+.main-layout {
+  padding-top: 80px;
+}
+
+.center {
+  text-align: center;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+  background-color: #eee;
+  color: #444;
+  cursor: pointer;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+  display: none;
+  overflow: hidden;
+}
