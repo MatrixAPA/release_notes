@@ -1,3 +1,6 @@
+[![Maintainability](https://api.codeclimate.com/v1/badges/27e5812f170bb6712509/maintainability)](https://codeclimate.com/repos/5d22e10360371e018b000df5/maintainability)
+
+
 # ReleaseNotes
 
 A Rails engine for the Matrix Release Notes platform. 
