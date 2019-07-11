@@ -8,7 +8,7 @@ module ReleaseNotes
     end
 
     def add_route
-      route 'mount ReleaseNotes::Engine => "/"'
+      route 'mount ReleaseNotes::Engine => "/release_notes"'
     end
   end
 end
