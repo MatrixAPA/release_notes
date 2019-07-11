@@ -2,6 +2,6 @@
   <div class="center">Uh-oh! There are no release notes yet <i class="far fa-frown"></i></div>
   <% if user_signed_in? %>
     <div class="center">
-      <br/><%= link_to Faker::TvShows::Simpsons.quote, new_release_note_path, class: 'btn btn-sm btn-primary' %></div>
+      <br/><%= link_to 'Add a Release Note', new_release_note_path, class: 'btn btn-sm btn-primary' %></div>
   <% end %>
 </div>
