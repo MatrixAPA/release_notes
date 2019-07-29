@@ -75,12 +75,12 @@
     <div class="release-note-row">
       <div class="release-note-buttons">
         <% if release_note.published %>
-          <%= link_to 'Notify', notify_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-success' %>
-          <%= link_to 'Unpublish', publish_toggle_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-danger' %>
+          <%= link_to 'Notify', notify_release_note_path(id: release_note.id), class: 'btn btn-sm btn-success' %>
+          <%= link_to 'Unpublish', publish_toggle_release_note_path(id: release_note.id), class: 'btn btn-sm btn-danger' %>
         <% else %>
-          <%= link_to 'Edit', edit_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-info' %>
-          <%= link_to 'Publish', publish_toggle_release_note_path(:id => release_note.id), class: 'btn btn-sm btn-success' %>
-          <%= link_to 'Delete', release_note_path(release_note), :method => :delete, data: {confirm: 'Are you sure?'}, class: 'btn btn-sm btn-danger' %>
+          <%= link_to 'Edit', edit_release_note_path(id: release_note.id), class: 'btn btn-sm btn-info' %>
+          <%= link_to 'Publish', publish_toggle_release_note_path(id: release_note.id), class: 'btn btn-sm btn-success' %>
+          <%= link_to 'Delete', release_note_path(release_note), :method => :delete, data: {confirm: t('deletion.confirm_text'), afirm: t('button_labels.confirm'), cancel: t('button_labels.cancel')}, class: 'action-link btn btn-md btn-danger' %>
         <% end %>
       </div>
     </div>
