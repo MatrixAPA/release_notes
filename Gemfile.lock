@@ -5,7 +5,7 @@ PATH
       jquery-rails (~> 4.3)
       paper_trail (~> 10.3)
       pg (~> 1.1)
-      rails (= 6.0.2.1)
+      rails (>= 6.0.2.1, < 7)
       shoulda-matchers (~> 4.1)
 
 GEM
