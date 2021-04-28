@@ -28,7 +28,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'rails', '>=6.0.2.1', '< 7'
 
   spec.add_dependency 'jquery-rails', '~> 4.3'
-  spec.add_dependency 'paper_trail', '~> 10.3'
+  spec.add_dependency 'paper_trail', '>= 10.3', '< 13.0'
   spec.add_dependency 'pg', '~> 1.1'
   spec.add_dependency 'shoulda-matchers', '~> 4.1'
 
