@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'jquery-rails', '~> 4.3'
   spec.add_dependency 'paper_trail', '~> 12.0'
   spec.add_dependency 'pg', '~> 1.1'
-  spec.add_dependency 'shoulda-matchers', '~> 4.1'
+  spec.add_dependency 'shoulda-matchers', '>= 4.1', '< 6.0'
 
   spec.add_development_dependency 'database_cleaner', '~> 1.7'
   spec.add_development_dependency 'factory_bot_rails', '~> 5.0'
